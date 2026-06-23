@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog Entry</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #fff; color: #111; }
+    .page { max-width: 860px; margin: 0 auto; padding: 40px; }
+    h1 { margin-bottom: 0.5rem; }
+    p { line-height: 1.8; color: #333; }
+    a { color: #1a0dab; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { margin-top: 24px; color: #555; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Catalog Entry</h1>
+    <p>A catalog entry provides the metadata and summary for a library item. It often links back to broader topics like <a href="page-c.html">Chapter Collections</a> and the editorial standards found in <a href="page-d.html">Reference Guides</a>.</p>
+    <p>It also describes how the item was created, which connects to the <a href="page-e.html">Writing Process</a>. Together, these pages help readers understand both the content and the structure of the archive.</p>
+    <p class="meta">See also: <a href="page-c.html">Chapter Collections</a>, <a href="page-d.html">Reference Guides</a>, <a href="page-e.html">Writing Process</a>.</p>
+  </main>
+  <script>
+    // This page grants the secret token for the manual URL jump to page-w.html.
+    sessionStorage.setItem('secretLibraryToken', 'allowed');
+  </script>
+</body>
+</html>

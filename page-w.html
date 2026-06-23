@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secret Access</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #fafafa; color: #111; }
+    .page { max-width: 840px; margin: 0 auto; padding: 40px; }
+    .hidden { display: none; }
+    .notice { margin-top: 2rem; padding: 16px; background: #f8fafc; border-radius: 0; border: 0; }
+    .content { padding: 24px; border-radius: 0; background: #f8fafc; border: 0; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1 id="pageTitle">Library Access</h1>
+    <div id="blocked" class="notice hidden">
+      <p>The archive entry describes how a catalog page fits into the broader library system, linking the structure of a work to the editing guidelines and chapter summaries. Readers learn that a proper reference article should connect concepts like <a href="page-c.html">Chapter Collections</a>, <a href="page-d.html">Reference Guides</a>, and the <a href="page-e.html">Writing Process</a> in a way that feels natural and informative. This helps the page remain readable while also guiding users to related material, just like a normal encyclopedia entry.</p>
+    </div>
+    <div id="content" class="content hidden">
+      <p>Secret access granted. You have reached the hidden destination after visiting the correct gate page.</p>
+      <p>This page has no direct links from the gate, so it stays hidden unless the URL is entered manually.</p>
+      <p><a href="page-a.html">Return to the library archive</a></p>
+    </div>
+  </main>
+  <script>
+    const token = sessionStorage.getItem('secretLibraryToken');
+    const blocked = document.getElementById('blocked');
+    const content = document.getElementById('content');
+    const pageTitle = document.getElementById('pageTitle');
+
+    if (token === 'allowed') {
+      content.classList.remove('hidden');
+      pageTitle.textContent = 'Secret Access Granted';
+      // Keep the token available while the user stays in this tab.
+    } else {
+      blocked.classList.remove('hidden');
+      sessionStorage.removeItem('secretLibraryToken');
+      window.location.href = '/page-a.html'; // Redirect back to the gate page after showing the notice.
+    }
+  </script>
+</body>
+</html>
