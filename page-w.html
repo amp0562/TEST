@@ -27,12 +27,12 @@
     </div>
   </main>
   <script>
-    const token = sessionStorage.getItem('secretLibraryToken');
+    const token = localStorage.getItem('secretLibraryToken');
     const blocked = document.getElementById('blocked');
     const content = document.getElementById('content');
     const pageTitle = document.getElementById('pageTitle');
 
-    if (token === 'allowed') {
+    if (token && Date.now() - token > 15000) {
       content.classList.remove('hidden');
       pageTitle.textContent = 'Secret Access Granted';
       // Keep the token available while the user stays in this tab.
