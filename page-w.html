@@ -32,7 +32,7 @@
     const content = document.getElementById('content');
     const pageTitle = document.getElementById('pageTitle');
 
-    if (token && Date.now() - token > 15000) {
+    if (token && Date.now() - token < 15000) {
       content.classList.remove('hidden');
       pageTitle.textContent = 'Secret Access Granted';
       // Keep the token available while the user stays in this tab.
