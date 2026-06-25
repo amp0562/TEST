@@ -20,7 +20,7 @@
     <p>Suggested reading includes <a href="page-c.html">Chapter Collections</a>, <a href="page-d.html">Reference Guides</a>, and the <a href="page-e.html">Writing Process</a>.</p>
   </main>
   <script>
-    sessionStorage.removeItem('secretLibraryToken');
+    localStorage.removeItem('secretLibraryToken');
     if (req.method !== "POST") {
 
       return res.status(404).end()
